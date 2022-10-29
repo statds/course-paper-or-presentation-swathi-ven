@@ -1,0 +1,311 @@
+\documentclass [xcolor=svgnames, t] {beamer} 
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs, comment} 
+\usepackage[absolute, overlay]{textpos} 
+\usepackage{pgfpages}
+\usepackage[font=footnotesize]{caption}
+\useoutertheme{infolines} 
+
+\definecolor{gold}{RGB}{254, 206, 0}
+
+%\setbeamercolor{title in head/foot}{bg=gold, fg=black}
+\setbeamercolor{author in head/foot}{bg=myuniversity}
+\setbeamertemplate{page number in head/foot}{}
+\usepackage{csquotes}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+
+
+\usepackage{textpos}
+
+\usepackage{tikz}
+\usepackage{multirow}
+
+\usetheme{Dresden}
+\setbeamertemplate{footline}[]
+\definecolor{myuniversity}{RGB}{0, 85, 150}
+\usecolortheme[named=myuniversity]{structure}
+\usepackage{tikz}
+
+
+
+\title[]{A New Formulation of Minimum Risk Fixed-Width Confidence
+Interval (MRFWCI) for a Normal Mean}
+\titlegraphic{\includegraphics[height=2 cm]{UConnlogo.png}}
+\institute[]{Department of Statistics \\ University of Connecticut}
+
+\author[]{ Swathi Venkatesan }
+
+\date{}
+
+
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%\frametitle{Table of Contents}
+%\tableofcontents
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Theory of MRFWCI}
+%\section{Abstract}
+%\begin{frame}{Motivation}
+\vspace{10mm}
+ %The fixed-width confidence interval (FWCI) estimation problems for a normal mean when the variance is unknown have moved along under a zero-one loss without taking into account sampling cost. While, minimum risk point estimation (MRPE) problems have grown largely under squared error loss (SEL) plus sampling cost. Here, a new formulation combining both MRPE and FWCI methodologies is introduced with desired asymptotic second-order characteristics under a unified structure to develop a minimum risk fixed-width confidence interval (MRFWCI) strategy.
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Loss and Risk Function}
+\begin{frame}{Construction of Loss and Risk Functions}
+    Suppose $X_1,X_2, \dots ,X_n \dots$ are \textit{independent and identically distributed (i.i.d)} observations from a common $N(\mu,\sigma^2)$ distribution where $\mu \in \mathbb{R}$, $\sigma \in \mathbb{R}^{+}$, $\theta=(\mu,\sigma)$ and both $\mu,\sigma$ are unknown. \\
+    \vspace{2mm}
+    Having pre-assigned numbers, $d(>0)$ and $0<\alpha<1$, the FWCI for $\mu$ is:
+        $$\textbf{FWCI: } J_n \equiv \left[ \bar{X}_n \pm d\right],$$
+        \begin{equation} \label{opt_n} 
+        \begin{split}
+        & \text{ with confidence coefficient }P_{\theta}\{\mu \in J_n\} = 2\Phi(n^{1/2}d/\sigma)-1  \ge 1-\alpha \\
+        & \text{ when } n \text{ is the smallest integer } \ge z^2_{\alpha/2}\sigma^2 d^{-2} \equiv n^*.
+        \end{split}
+        \end{equation}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+    \vspace{7mm}
+    Generically, we may initiate the following idea of a loss function in practice:
+        \begin{equation} \label{loss_fn}
+            L_n(\theta)  = EstErr_n(\theta)+c_n(\theta),
+        \end{equation}
+        where $EstErr_n(\theta)$ is the estimation error involving $I \left[ {\tau(\theta) \not\in FWCI;n} \right]$ plus the $c_n(\theta) \equiv \text{sampling cost}_n$\\
+        \vspace{2mm}
+    We combine (1) and (2) to express:
+        \begin{equation}
+        p_n(\theta ;J_n) \equiv E_{\theta} \{ {I[ \mu \not\in J_n;n]}\} =2\{ 1-\Phi(n^{1/2}d/\sigma) \}.
+        \end{equation}
+        We incorporate the following expression of the cost function:
+        \begin{equation} \label{cost_fn}
+        c_n(\theta) = 2(d^\rho \sigma)^{-1} \phi(z_{\alpha/2})n^{1/2}.
+        \end{equation}
+        
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\vspace{16mm}
+Then, in the spirits of (1) and (3)-(4), we construct the loss function (for fixed $0<\rho \le 1$) as:
+        \begin{equation}
+            \textbf{Loss: }L_n(\mu,J_n) \equiv d^{-\rho-1}I[\mu \not\in J_n;n]+c_n(\theta).
+        \end{equation}
+        The corresponding Risk is given by:
+    \begin{equation*}
+    \begin{split}
+        \textbf{Risk: } R_n(\mu,J_n)  \equiv E_{\theta}[L_n(\mu,J_n)] \\ &= 2d^{-\rho-1}[1-\Phi(n^{1/2}d/\sigma)]+2(d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})n^{1/2} .
+    \end{split}
+    \end{equation*}
+    
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{General Theory-MRFWCI}
+\begin{frame}{General setup of MRFWCI-Normal mean Estimation}
+
+We propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,X_2,\dots ,X_N\}$ as:
+    \begin{equation*}
+    \textbf{MRFWCI: }J_N=[\bar{X}_N \pm d] \text{ where }\bar{X}_N=N^{-1} \sum_{i=1}^N{X_i}.    
+    \end{equation*}
+    
+    The risk function $R_N(\mu,J_N)$ with the terminal strategy $(N,J_N)$ for $\mu$ under (5) is:
+    \begin{equation*}
+        R_N(\mu,J_N) = 2\{ d^{-\rho-1} E_{\theta}[1-\Phi(N^{1/2}d/\sigma)]+ (d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})E_{\theta}(N^{1/2})\}.
+    \end{equation*}
+    
+    %The optimal fixed sample size (had $\sigma$ been known) corresponding to the minimum risk associated with the MRFWCI formulation under the new loss function remains exactly the same as that shown earlier in (1).
+    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Properties}
+\begin{frame}{}
+\vspace{15mm}
+ Without specifying a formal sampling strategy , we assume a number of key associated properties as $d \xrightarrow{} 0$ :
+   
+    \begin{itemize}
+        \item[\textbf{A1}] $ E_{\theta}(N)=n^* +a_1 +o(1)$;
+         \item[\textbf{A2}] $H \equiv \frac{N-n^*}{n^{*1/2}} \xrightarrow{\L} N(0,a_2), a_2>0$ ;
+          \item[\textbf{A3}] $P_{\theta}\{ N \le \epsilon^*\}=O(n^{*-a_3}),\epsilon \in (0,1), a_3>0$;
+           \item[\textbf{A4}] $|H|^{a_4} \text{ is uniformly integrable },a_4 >0$.
+    \end{itemize}
+    
+    where the expressions of the real numbers $a_i's$ would not involve $d$.
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Asymptotic first-order properties}
+\vspace{7mm}
+For the general MRFWCI estimation methodology carried out under the loss function (5), for every fixed $\alpha, \rho \text{ and } \theta$, with $a_i$ defined via assumption $A_i$, we have the following asymptotic first-order conclusions as $d \xrightarrow{} 0$ :
+
+\begin{itemize}
+\item[(i)] $n^{*-1}N \xrightarrow[]{P_{\theta}}1$;
+\item[(ii)] $E_{\theta}[(n^{*-1}N)^{\kappa}] \xrightarrow[]{} 1$ [\textit{asymptotic first-order efficiency property}];
+\item[(iii)] $P_{\theta} \{ \mu \in J_N\} \xrightarrow[]{} (1-\alpha)$ [\textit{asymptotic consistency property}];
+\item[(iv)] $\text{RiskEff}_d =\frac{R_N(\mu,J_N)}{R_{n^*}(\mu,J_{n^*})} \xrightarrow[]{} 1$ [\textit{asymptotic risk efficiency property}].
+\end{itemize}
+ 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Asymptotic second-order properties}
+\vspace{5mm}
+For the general MRFWCI estimation methodology carried out under (5), for every fixed $\alpha, \rho \text{ and } \theta$, with $a_i$ defined via assumption $A_i$, we have the following asymptotic second-order conclusions when $a_3>\frac{5}{2}$ and $a_4=2$ as $d \xrightarrow{} 0$ :
+\begin{enumerate}
+\item[(i)] $E_{\theta}[(n^{*-1}N)^{1/2}]=1+a_5n^{*-1}+o(n^{*-1})$ where $a_5=\frac{1}{2}(a_1-\frac{1}{2}a_2)$;
+\item[(ii)] $P_{\theta} \{ \mu \in J_N\} = (1-\alpha)+2a_6n^{*-1}+o(n^{*-1)}$\\
+where $a_6=\frac{1}{2}\{ a_1-(a_2/4)(1-z^2_{\alpha/2}) \}z_{\alpha/2}\phi(z_{\alpha/2})$;
+\item[(iii)] $\text{RiskEff}_d =\omega=\frac{R_N(\mu,J_N)}{R_{n^*}(\mu,J_{n^*})}= 1+ a_7 n^{*-1}+o(n^{*-1)}$ \\ where $a_7 = 2\{\alpha + 2z_{\alpha/2}\phi(z_{\alpha/2})\}^{-1} \{z_{\alpha/2}\phi(z_{\alpha/2})a_5-a_6\}$.
+\end{enumerate}
+ 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sampling Strategies}
+%\section{Sampling Strategies}
+\begin{frame}{Illustrations of Multistage Sampling Strategies}
+    \begin{itemize}
+    \item \textbf{Purely Sequential Sampling strategy}
+\\ We begin with pilot observations $X_1,\dots ,X_m; m\ge 2$. Then, we record one additional observation at-a-time according to the following stopping
+time:
+\begin{equation*}
+    N \equiv N_d=inf\{ n \ge m; n \ge z^2_{\alpha/2}S_n^2/d^2 \}  \textrm{ and }  J_N=[\bar{X}_N \pm d].
+\end{equation*}
+\item \textbf{Two-stage Sampling strategy}
+    \\ We assume that there exists known $\sigma_L(>0)$ such that $\sigma>\sigma_L$.The pilot sample size is defined as:
+    $$m\ equiv m_d=max \{ m_0(\ge 2),<z^2_{\alpha/2}\sigma_L^2/d^2>+1\}.$$
+    We begin with pilot observations $X_1,\dots ,X_m, m \ge 2$ and find the final sample size as:
+    \begin{equation*}
+    N \equiv N_d=max\{ m,< t^2_{m-1,\alpha/2}S_m^2/d^2>+1\} \text{ and } J_N=[\bar{X}_N \pm d].
+\end{equation*}
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{}
+    \vspace{20mm}
+    The table below summarizes some properties of the sampling strategies.
+\begin{center}
+\begin{tabular}{c c c} 
+ \hline
+ Sampling Strategy & $a_1$ & $a_2$ \\
+ \hline
+ Purely Sequential & $-1.1828$ & $2$  \\ 
+ Two-stage & $\frac{1}{2}[(z^2_{\alpha/2}+1)\frac{\sigma^2}{\sigma^2_L}+1]$ & $2\frac{\sigma^2}{\sigma^2_L}$ \\
+ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data Analysis and Simulations}
+%\section{Data Analysis and Simulations}
+\begin{frame}{\textit{Airquality} Data Analysis}
+
+Now we will illustrate applications of the MRFWCI problem for the average in the context of \textit{airquality dataset} describing daily air quality measurements in New York. The variable of interest $(X)$ was \textit{wind speed},which was normally distributed. The mean and standard deviation from the full dataset were: $\mu = 9.957$ and $\sigma = 3.523$. The table below summarises the performance of the sampling strategies (fixing $\alpha=0.05$ and $\rho=1.0$). The notations are defined below:
+\begin{itemize}
+\item $n$: terminal sample size;
+\item $\hat{\mu}_n=n^{-1}\sum_{j=1}^n{x_j}$; terminal sample mean;
+\item $J_n=[\hat{\mu}_n \pm d]$; terminal $95\%$ MRFWCI for $\mu$.
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{}
+    \vspace{8mm}
+    \begin{center}
+\begin{tabular}{c c c c c} 
+ \hline
+ Sampling Strategy & $d$ & $n$ & $\hat{\mu}_n$ & $J_n$  \\  
+ \hline
+{Purely Sequential}  & $0.7$ & $102$ & $10.034$ & $[9.334,10.734]$  \\ 
+ $m=15$ & $0.8$ & $83$ & $10.427$ & $[9.626,11.226]$ \\
+  & $0.9$ & $65$ & $10.795$ & $[9.895,11.695]$\\
+ \hline
+{Two-stage }  & $0.7$ & $105$ &$10.072$ & $[9.375,10.775]$  \\ 
+ $\sigma_L=2,m_0=5$ & $0.8$ & $79$ & $10.534$ & $[9.734,11.334]$ \\
+  & $0.9$ & $69$ & $10.559$ & $[9.965,11.459]$\\
+ \hline
+{Two-stage }  & $0.7$ & $115$ & $10.146$ & $[9.446,10.846]$  \\ 
+ $\sigma_L=3,m_0=5$ & $0.8$ & $90$ & $10.321$ & $[9.521,11.121]$ \\
+  & $0.9$ & $56$ & $10.993$ & $[10.093,11.893]$\\
+ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Simulation Study}
+
+Simulated performances of  MRFWCI strategies under $10,000$ replications for a $N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
+ \begin{center}
+\begin{tabular}{c c c c c} 
+ \hline
+ $n^*$ & $d$ & $\bar{n}$ & $\bar{p}$ & $\bar{\omega}$\\
+ \hline
+ \multicolumn{5}{c}{Purely Sequential $m=15$}\\
+  \hline
+ $200$ & $0.5543$ & $198.744$ & $0.9484$  & $1.004$\\ 
+ $1000$ & $0.2479$ & $998.048$ & $0.9462$ & $1.001$ \\ 
+  $5000$ & $0.1108$ & $4997.536$ & $0.9477$ & $1.001$ \\ 
+  \hline
+\multicolumn{5}{c}{Two-Stage $\sigma_L=3, m_0=10$}\\
+ \hline
+ $200$ & $0.5543$ & $200.851$ & $0.9459$ & $1.007$ \\ 
+ $1000$ & $0.2479$ & $1001.101$ & $0.9459$  & $1.003$\\ 
+  $5000$ & $0.1108$ & $4997.536$ & $0.9477$  & $1.001$\\ 
+ \hline
+\end{tabular}
+\end{center}
+    
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\begin{frame}{Conclusion}
+\vspace{10mm}
+When handling FWCI problems,the lack of a loss function creates a false impression that perhaps (i) observations may not cost at all and/or (ii) one's available budget may be unlimited. In the MRFWCI formulation,an FWCI problem has been casted in the light of an MRPE by balancing the estimation error with the cost of sampling.
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Reference}
+
+%\nocite{*}
+\begin{frame}[allowframebreaks]{Reference}
+%\bibliographystyle{unsrt}
+%\bibliography{bibfile.bib}
+
+\textbf{Nitis Mukhopadhyay and Swathi Venkatesan}.\\
+\vspace{0.2cm}
+A New Formulation of Minimum Risk Fixed-Width Confidence Interval
+(MRFWCI) Estimation Problems for a Normal Mean with Illustrations
+and Simulations: Applications to Airquality Data.\\
+\textit{Sequential Analysis, 41, 2022}.
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
