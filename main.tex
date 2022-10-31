@@ -67,8 +67,7 @@ Interval (MRFWCI) for a Normal Mean}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Motivation}
 
-Under a classical fixed-width confidence interval (FWCI) methodology, one treats the associated confidence 
-coefficient as the main focus, which is naturally supposed to go up as the sample size increases. Insuch a formulation, however, one does not encounter the cost of unit observation at all,which often creates a false pretense that perhaps (i) observations may not cost at alland/or (ii) one’s available budget may be unlimited.\\
+Under a classical fixed-width confidence interval (FWCI) methodology, one treats the associated confidence coefficient as the main focus, which is naturally supposed to go up as the sample size increases. In such a formulation, however, one does not encounter the cost of unit observation at all,which often creates a false pretense that perhaps (i) observations may not cost at alland/or (ii) one’s available budget may be unlimited.\\
 \vspace{0.2cm}
 On the other hand, under the minimum risk point estimation (MRPE) strategy, one openly balances the estimationerror by taking into account the cost of sampling, which go together hand in hand.\\
 \vspace{0.2cm}
@@ -89,7 +88,7 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
     {i=1}^n {(X_i-\bar{X}_n)^2}$$
     \vspace{0.1cm}
     We also denote \\
-    $\phi(x)=(2\pi)^{-1/2}exp(-x^2/2)$ and $\Phi(x) = [\int_{-\infty}^{x} \phi(y) dy $
+    $\phi(x)=(2\pi)^{-1/2}exp(-x^2/2)$ and $\Phi(x) = \int_{-\infty}^{x} \phi(y) dy $
     
     \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,12 +100,26 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
     
     Having pre-assigned numbers, $d(>0)$ and $0<\alpha<1$, the FWCI for $\mu$ is:
         $$\textbf{FWCI: } J_n \equiv \left[ \bar{X}_n \pm d\right],$$
+        which  has the fixed width, $2d$. The confidence coefficient associated with $J_n$ is given by
         \begin{equation} \label{opt_n} 
         \begin{split}
         & \text{ with confidence coefficient }P_{\theta}\{\mu \in J_n\} = 2\Phi(n^{1/2}d/\sigma)-1  \ge 1-\alpha \\
         & \text{ when } n \text{ is the smallest integer } \ge z^2_{\alpha/2}\sigma^2 d^{-2} \equiv n^*.
         \end{split}
         \end{equation}
+        $z_{\alpha/2}$ stands for the upper $50 \alpha \%$ point of a standard normal random variable; that is, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \begin{frame}{}
+  \vspace{7mm}
+
+The expression of $n^*$ from (\ref{opt_n}) is referred to as the \textit{optimal fixed sample size} required to construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
+\vspace{0.2cm}
+We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is assumed unknown.Dantzig (1940) showed that there did not exist any fixed-sample-size methodology to solve this problem.\\
+\vspace{0.2cm}
+Stein (1945,1949), followed by Anscombe (1952, 1953), Ray (1957), Chow and Robbins (1965), andothers, developed a number of pioneering multistage and purely sequential samplingmethodologies in order to address the FWCI problem.
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
