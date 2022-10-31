@@ -58,7 +58,7 @@ Interval (MRFWCI) for a Normal Mean}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{General Theory of MRFWCI}
+\section{Motivation}
 %\begin{frame}{Abstract}
 %\vspace{10mm}
 %The fixed-width confidence interval (FWCI) estimation problems for a normal mean when the variance is unknown have moved along under a zero-one loss without taking into account sampling cost. While, minimum risk point estimation (MRPE) problems have grown largely under squared error loss (SEL) plus sampling cost. Here, a new formulation combining both MRPE and FWCI methodologies is introduced with desired asymptotic second-order characteristics under a unified structure to develop a minimum risk fixed-width confidence interval (MRFWCI) strategy.
@@ -78,7 +78,7 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%\section{Loss and Risk Function}
+\section{Loss and Risk Function}
 \begin{frame}{Construction of Loss and Risk Functions}
     Suppose $X_1,X_2, \dots ,X_n \dots$ are \textit{independent and identically distributed (i.i.d)} observations from a common $N(\mu,\sigma^2)$ distribution where $\mu \in \mathbb{R}$, $\sigma \in \mathbb{R}^{+}$, $\theta=(\mu,\sigma)$ and both $\mu,\sigma$ are unknown. \\
     \vspace{2mm}
@@ -173,10 +173,20 @@ The corresponding Risk is given by:
     
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{General Theory-MRFWCI}
+\section{General Theory-MRFWCI}
 \begin{frame}{General setup of MRFWCI-Normal mean Estimation}
+\vspace{5mm}
+Let $m(\geq 2)$ be an initial or pilot sample size, not involving $d$. In the case of each estimation strategy that will be discussed later , we will readily see that the boundary conditions for stopping will depend only upon the sample variance(s), that is the event $[N=n]$ would only depend on $(S_m^2,\dots,S_n^2)$ for all $n \geq m$, ultimately arriving at the terminally accrued data, 
+$\{N,X_1,\dots,X_N\}$ where $N$ would estimate $n^*$. \\
+\vspace{0.4cm}
+By using Basu's theorem, $I(N=n)$ will be independent of $\bar{X}_n$ for all $n \geq m$. \\
+\vspace{0.1cm}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,X_2,\dots ,X_N\}$ as:
+\begin{frame}
+\vspace{10mm}
+Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,X_2,\dots ,X_N\}$ as:
     \begin{equation*}
     \textbf{MRFWCI: }J_N=[\bar{X}_N \pm d] \text{ where }\bar{X}_N=N^{-1} \sum_{i=1}^N{X_i}.    
     \end{equation*}
@@ -199,13 +209,15 @@ We propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,X_2,\
  Without specifying a formal sampling strategy , we assume a number of key associated properties as $d \xrightarrow{} 0$ :
    
     \begin{itemize}
-        \item[\textbf{A1}] $ E_{\theta}(N)=n^* +a_1 +o(1)$;
+        \item[\textbf{A1}] $ E_{\theta}(N)=n^* +a_1 +o(1)$ [\textit{asymptotic second-order efficiency}];
          \item[\textbf{A2}] $H \equiv \frac{N-n^*}{n^{*1/2}} \xrightarrow{\L} N(0,a_2), a_2>0$ ;
           \item[\textbf{A3}] $P_{\theta}\{ N \le \epsilon^*\}=O(n^{*-a_3}),\epsilon \in (0,1), a_3>0$;
            \item[\textbf{A4}] $|H|^{a_4} \text{ is uniformly integrable },a_4 >0$.
     \end{itemize}
     
-    where the expressions of the real numbers $a_i's$ would not involve $d$.
+    where the expressions of the real numbers $a_i's$ would not involve $d$.\\
+    \vspace{0.2cm}
+    The asymptotic characteristics assumed above will hold under appropriate conditions on the pilot (or initial) sample size $m( \geq 2)$.
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Asymptotic first-order properties}
@@ -252,6 +264,25 @@ time:
     \begin{equation*}
     N \equiv N_d=max\{ m,< t^2_{m-1,\alpha/2}S_m^2/d^2>+1\} \text{ and } J_N=[\bar{X}_N \pm d].
 \end{equation*}
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \begin{itemize}
+\item \textbf{Accelerated Sequential Sampling strategy}\\
+We fix an integer $k(\geq 2)$ and begin with pilot observations $X_1,\dots ,X_m; m\ge 2$. Then, we record one additional observation at-a-time according to the following stopping
+time:
+
+        
+        $$ T \equiv T_d=inf\{ n \ge m; n \ge k^{-1}z^2_{\alpha/2}S_n^2/d^2 \} $$ 
+        $$ N \equiv N_d = kT_d  \text{ and } J_N=[\bar{X}_N \pm d] $$
+ 
+\item \textbf{Three Stage Sampling strategy}\\
+We fix a suitable number $\kappa(\in (0,1))$ and begin with pilot observations $X_1,\dots ,X_m; m\ge 2$ and define:
+        $$ T =max\{  m,  <\kappa z^2_{\alpha/2}S_m^2/d^2 >+1\} $$ 
+        $$ N =max \{ T,  <z^2_{\alpha/2}S_T^2/d^2 >+1\}  \text{ and } J_N=[\bar{X}_N \pm d] $$
+ 
+
     \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
