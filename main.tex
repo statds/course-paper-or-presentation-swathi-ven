@@ -61,7 +61,11 @@ Interval (MRFWCI) for a Normal Mean}
 
 %\begin{frame}{Abstract}
 %\vspace{10mm}
-%The fixed-width confidence interval (FWCI) estimation problems for a normal mean when the variance is unknown have moved along under a zero-one loss without taking into account sampling cost. While, minimum risk point estimation (MRPE) problems have grown largely under squared error loss (SEL) plus sampling cost. Here, a new formulation combining both MRPE and FWCI methodologies is introduced with desired asymptotic second-order characteristics under a unified structure to develop a minimum risk fixed-width confidence interval (MRFWCI) strategy.
+%The fixed-width confidence interval (FWCI) estimation problems for a normal mean when 
+%the variance is unknown have moved along under a zero-one loss without taking into account sampling cost. 
+%While, minimum risk point estimation (MRPE) problems have grown largely under squared error loss (SEL) plus sampling cost. 
+%Here, a new formulation combining both MRPE and FWCI methodologies is introduced with desired asymptotic second-order 
+%characteristics under a unified structure to develop a minimum risk fixed-width confidence interval (MRFWCI) strategy.
 %\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,7 +73,8 @@ Interval (MRFWCI) for a Normal Mean}
 \begin{frame}{Motivation}
 
 Under a classical fixed-width confidence interval (FWCI) methodology, one treats the associated confidence coefficient as the main focus, 
-which is naturally supposed to go up as the sample size increases. In such a formulation, however, one does not encounter the cost of unit observation at all,which often creates a false pretense that perhaps (i) observations may not cost at alland/or (ii) one’s available budget may be unlimited.\\
+which is naturally supposed to go up as the sample size increases. 
+In such a formulation, however, one does not encounter the cost of unit observation at all,which often creates a false pretense that perhaps (i) observations may not cost at alland/or (ii) one’s available budget may be unlimited.\\
 \vspace{0.2cm}
 On the other hand, under the minimum risk point estimation (MRPE) strategy, one openly balances the estimationerror by taking into account the cost of sampling, which go together hand in hand.\\
 \vspace{0.2cm}
@@ -82,8 +87,10 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
 
 \section{Loss and Risk Function}
 \begin{frame}{Construction of Loss and Risk Functions}
-    Suppose $X_1,X_2, \dots ,X_n \dots$ are \textit{independent and identically distributed (i.i.d)} observations from a common 
-    $N(\mu,\sigma^2)$ distribution where $\mu \in \mathbb{R}$, $\sigma \in \mathbb{R}^{+}$, $\theta=(\mu,\sigma)$ and both $\mu,\sigma$ are unknown. \\
+    Suppose $X_1,X_2, \dots ,X_n \dots$ are \textit{independent 
+    and identically distributed (i.i.d)} observations from a common 
+    $N(\mu,\sigma^2)$ distribution where $\mu \in \mathbb{R}$, 
+    $\sigma \in \mathbb{R}^{+}$, $\theta=(\mu,\sigma)$ and both $\mu,\sigma$ are unknown. \\
     \vspace{2mm}
     Having recorded a fixed number $n (\geq 2)$ of observations $X_1,X_2,\dots,X_n$, we denote:
     $$\text{Sample mean: }\bar{X}_n=n^{-1}\sum_{i=1}^nX_i$$
@@ -110,7 +117,8 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
         & \text{ when } n \text{ is the smallest integer } \ge z^2_{\alpha/2}\sigma^2 d^{-2} \equiv n^*.
         \end{split}
         \end{equation}
-        $z_{\alpha/2}$ stands for the upper $50 \alpha \%$ point of a standard normal random variable; that is, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
+        $z_{\alpha/2}$ stands for the upper $50 \alpha \%$ point of a standard normal r
+        andom variable; that is, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,9 +126,11 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
  \begin{frame}{}
   \vspace{7mm}
 
-The expression of $n^*$ from (1) is referred to as the \textit{optimal fixed sample size} required to construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
+The expression of $n^*$ from (1) is referred to as the \textit{optimal fixed sample size} required to 
+construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
 \vspace{0.2cm}
-We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is assumed unknown.Dantzig (1940) showed that there 
+We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is 
+assumed unknown.Dantzig (1940) showed that there 
 did not exist any fixed-sample-size methodology to solve this problem.\\
 \vspace{0.2cm}
 Stein (1945,1949), followed by Anscombe (1952, 1953), Ray (1957), Chow and Robbins (1965), andothers, developed a number of pioneering multistage and purely sequential samplingmethodologies in order to address the FWCI problem.
@@ -133,7 +143,8 @@ Stein (1945,1949), followed by Anscombe (1952, 1953), Ray (1957), Chow and Robbi
         \begin{equation} \label{loss_fn}
             L_n(\theta)  = EstErr_n(\theta)+c_n(\theta),
         \end{equation}
-        where $EstErr_n(\theta)$ is the estimation error involving $I \left[ {\tau(\theta) \not\in FWCI;n} \right]$ plus the $c_n(\theta) \equiv \text{sampling cost}_n$\\
+        where $EstErr_n(\theta)$ is the estimation error involving 
+        $I \left[ {\tau(\theta) \not\in FWCI;n} \right]$ plus the $c_n(\theta) \equiv \text{sampling cost}_n$\\
         \vspace{2mm}
     We combine (1) and (2) to express:
         \begin{equation}
@@ -146,7 +157,8 @@ Stein (1945,1949), followed by Anscombe (1952, 1953), Ray (1957), Chow and Robbi
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 \vspace{10mm}
-Having fixed pre-assigned $d,\alpha,\rho$ and $\sigma$, we incorporate the following expression of the cost function:
+Having fixed pre-assigned $d,\alpha,\rho$ and $\sigma$, we incorporate the 
+following expression of the cost function:
         \begin{equation} \label{cost_fn}
         c_n(\theta) = 2(d^\rho \sigma)^{-1} \phi(z_{\alpha/2})n^{1/2}.
         \end{equation}
@@ -180,8 +192,9 @@ The corresponding Risk is given by:
 \section{General Theory-MRFWCI}
 \begin{frame}{General setup of MRFWCI-Normal mean Estimation}
 \vspace{5mm}
-Let $m(\geq 2)$ be an initial or pilot sample size, not involving $d$. In the case of each estimation strategy that will be discussed later , 
-we will readily see that the boundary conditions for stopping will depend only upon the sample variance(s), that is the event $[N=n]$ 
+Let $m(\geq 2)$ be an initial or pilot sample size, not involving $d$. In the case of 
+each estimation strategy that will be discussed later ,  we will readily see that the boundary 
+conditions for stopping will depend only upon the sample variance(s), that is the event $[N=n]$ 
 would only depend on $(S_m^2,\dots,S_n^2)$ for all $n \geq m$, ultimately arriving at the terminally accrued data, 
 $\{N,X_1,\dots,X_N\}$ where $N$ would estimate $n^*$. \\
 \vspace{0.4cm}
@@ -243,8 +256,10 @@ For the general MRFWCI estimation methodology carried out under the loss functio
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Asymptotic second-order properties}
 \vspace{5mm}
-For the general MRFWCI estimation methodology carried out under (5), for every fixed $\alpha, \rho \text{ and } \theta$, with $a_i$ defined 
-via assumption $A_i$, we have the following asymptotic second-order conclusions when $a_3>\frac{5}{2}$ and $a_4=2$ as $d \xrightarrow{} 0$ :
+For the general MRFWCI estimation methodology carried out under (5), for every 
+fixed $\alpha, \rho \text{ and } \theta$, with $a_i$ defined 
+via assumption $A_i$, we have the following asymptotic second-order conclusions 
+when $a_3>\frac{5}{2}$ and $a_4=2$ as $d \xrightarrow{} 0$ :
 \begin{enumerate}
 \item[(i)] $E_{\theta}[(n^{*-1}N)^{1/2}]=1+a_5n^{*-1}+o(n^{*-1})$ where $a_5=\frac{1}{2}(a_1-\frac{1}{2}a_2)$;
 \item[(ii)] $P_{\theta} \{ \mu \in J_N\} = (1-\alpha)+2a_6n^{*-1}+o(n^{*-1)}$\\
@@ -374,7 +389,8 @@ The table below summarises the performance of the sampling strategies (fixing $\
 
 \begin{frame}{Simulation Study}
 
-Simulated performances of  MRFWCI strategies under $10,000$ replications for a $N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
+Simulated performances of  MRFWCI strategies under $10,000$ replications for a 
+$N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
  \begin{center}
 \begin{tabular}{c c c c c} 
  \hline
@@ -429,7 +445,8 @@ Simulated performances of  MRFWCI strategies under $10,000$ replications for a $
 \vspace{10mm}
 When handling FWCI problems,the lack of a loss function creates a false impression that perhaps 
 (i) observations may not cost at all and/or (ii) one's available budget may be unlimited. 
-In the MRFWCI formulation, an FWCI problem has been casted in the light of an MRPE by balancing the estimation error with the cost of sampling.
+In the MRFWCI formulation, an FWCI problem has been casted in the light of an MRPE by 
+balancing the estimation error with the cost of sampling.
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Reference}
