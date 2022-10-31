@@ -115,7 +115,7 @@ Here, we propose to formulate a new way to combine both MRPE and FWCI methodolog
  \begin{frame}{}
   \vspace{7mm}
 
-The expression of $n^*$ from (\ref{opt_n}) is referred to as the \textit{optimal fixed sample size} required to construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
+The expression of $n^*$ from (1) is referred to as the \textit{optimal fixed sample size} required to construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
 \vspace{0.2cm}
 We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is assumed unknown.Dantzig (1940) showed that there did not exist any fixed-sample-size methodology to solve this problem.\\
 \vspace{0.2cm}
@@ -135,29 +135,43 @@ Stein (1945,1949), followed by Anscombe (1952, 1953), Ray (1957), Chow and Robbi
         \begin{equation}
         p_n(\theta ;J_n) \equiv E_{\theta} \{ {I[ \mu \not\in J_n;n]}\} =2\{ 1-\Phi(n^{1/2}d/\sigma) \}.
         \end{equation}
-        We incorporate the following expression of the cost function:
-        \begin{equation} \label{cost_fn}
-        c_n(\theta) = 2(d^\rho \sigma)^{-1} \phi(z_{\alpha/2})n^{1/2}.
-        \end{equation}
-        
+        which converges to $0$ as $n \rightarrow \infty$.\\
+        \vspace{0.1cm}
+                
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-\vspace{16mm}
+\vspace{10mm}
+Having fixed pre-assigned $d,\alpha,\rho$ and $\sigma$, we incorporate the following expression of the cost function:
+        \begin{equation} \label{cost_fn}
+        c_n(\theta) = 2(d^\rho \sigma)^{-1} \phi(z_{\alpha/2})n^{1/2}.
+        \end{equation}
 Then, in the spirits of (1) and (3)-(4), we construct the loss function (for fixed $0<\rho \le 1$) as:
         \begin{equation}
             \textbf{Loss: }L_n(\mu,J_n) \equiv d^{-\rho-1}I[\mu \not\in J_n;n]+c_n(\theta).
         \end{equation}
-        The corresponding Risk is given by:
-    \begin{equation*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+\vspace{10mm}
+
+The corresponding Risk is given by:
+    \begin{equation}
     \begin{split}
-        \textbf{Risk: } R_n(\mu,J_n)  \equiv E_{\theta}[L_n(\mu,J_n)] \\ &= 2d^{-\rho-1}[1-\Phi(n^{1/2}d/\sigma)]+2(d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})n^{1/2} .
+        \textbf{Risk: } R_n(\mu,J_n)  
+        & \equiv E_{\theta}[L_n(\mu,J_n)] \\ 
+        &= 2d^{-\rho-1}[1-\Phi(n^{1/2}d/\sigma)]+2(d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})n^{1/2} 
     \end{split}
-    \end{equation*}
+    \end{equation}
+    We may pretend to treat $n$ as a continuous variable and differentiate the expressionfrom (6), which is convex in $n$, with respect to $n$ and equate it to zero to claim:\\
+    $-d^{-\rho-1}(d/\sigma)n^{-1/2}\phi(n^{1/2}d/\sigma)+2(d^\rho \sigma)^{-1}\phi(z_{\alpha/2})\frac{1}{2}
+    n^{1/2}=0$\\
+    \vspace{0.1cm}
+    $\Rightarrow \phi(n^{1/2}d/\sigma)=\phi(z_{\alpha/2}) \Rightarrow  n \equiv n^*=z^2_{\alpha/2}\sigma^2d^{-2}$
     
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{General Theory-MRFWCI}
 \begin{frame}{General setup of MRFWCI-Normal mean Estimation}
