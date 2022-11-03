@@ -79,7 +79,7 @@ Interval (MRFWCI) for a Normal Mean}
 \item Under\textbf{ fixed-width confidence interval (FWCI)} methodology, one treats the associated confidence coefficient as the main focus.
 \item  In such a formulation, one does not encounter the cost of unit observation at all.
 \item  Under the \textbf{minimum risk point estimation (MRPE)} strategy, one openly balances the estimation
-error by taking into account the cost of sampling,
+error by taking into account the cost of sampling.
 \end{itemize}
 
 Here, we propose to formulate a new way to combine both MRPE and FWCI methodologies
@@ -91,12 +91,15 @@ with desired asymptotic second-order characteristics under one unified theory.
 
 
 \section{Loss and Risk Function}
-\begin{frame}{Construction of Loss and Risk Functions}
-    Suppose $X_1,X_2, \dots ,X_n \dots$ are \textit{independent 
+\begin{frame}{FWCI Setup}
+
+\begin{itemize}
+\item $X_1,X_2, \dots ,X_n \dots$ are \textit{independent 
     and identically distributed (i.i.d)} observations from a common 
-    $N(\mu,\sigma^2)$ distribution where $\mu \in \mathbb{R}$, 
-    $\sigma \in \mathbb{R}^{+}$, $\theta=(\mu,\sigma)$ and both $\mu,\sigma$ are unknown. \\
-    \vspace{2mm}
+    $N(\mu,\sigma^2)$ distribution.
+\item $\mu \in \mathbb{R}$ and $\sigma \in \mathbb{R}^{+}$ are unknown.
+\end{itemize}
+
     Having recorded a fixed number $n (\geq 2)$ of observations $X_1,X_2,\dots,X_n$, we denote:
     $$\text{Sample mean: }\bar{X}_n=n^{-1}\sum_{i=1}^nX_i$$
     $$\text{Sample variance: }S_n^2=(n-1)^{-1}\sum_
@@ -109,13 +112,13 @@ with desired asymptotic second-order characteristics under one unified theory.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
     
- \begin{frame}{}
+ \begin{frame}{FWCI Setup-Contd}
     \vspace{7mm}
 
     
     Having pre-assigned numbers, $d(>0)$ and $0<\alpha<1$, the FWCI for $\mu$ is:
         $$\textbf{FWCI: } J_n \equiv \left[ \bar{X}_n \pm d\right],$$
-        which  has the fixed width, $2d$. The confidence coefficient associated with $J_n$ is given by
+        which  has the fixed width, $2d$
         \begin{equation} \label{opt_n} 
         \begin{split}
         & \text{ with confidence coefficient }P_{\theta}\{\mu \in J_n\} = 2\Phi(n^{1/2}d/\sigma)-1  \ge 1-\alpha \\
@@ -123,12 +126,12 @@ with desired asymptotic second-order characteristics under one unified theory.
         \end{split}
         \end{equation}
         $z_{\alpha/2}$ stands for the upper $50 \alpha \%$ point of a standard normal 
-        random variable; that is, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
+        random variable; i.e, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
- \begin{frame}{}
+ \begin{frame}{FWCI Setup-Contd}
   \vspace{7mm}
 
 \begin{itemize}
@@ -146,7 +149,7 @@ methodologies in order to address the FWCI problem.
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{Construction of Loss and Risk Functions}
     \vspace{7mm}
     Generically, we may initiate the following idea of a loss function in practice:
         \begin{equation} \label{loss_fn}
