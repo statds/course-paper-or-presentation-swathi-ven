@@ -146,7 +146,6 @@ methodologies in order to address the FWCI problem.
 \end{itemize}
 
 
-
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Construction of Loss and Risk Functions}
@@ -155,8 +154,8 @@ methodologies in order to address the FWCI problem.
         \begin{equation} \label{loss_fn}
             L_n(\theta)  = EstErr_n(\theta)+c_n(\theta),
         \end{equation}
-        where $EstErr_n(\theta)$ is the estimation error involving 
-        $I \left[ {\tau(\theta) \not\in \text{FWCI};n} \right]$ plus the $c_n(\theta) \equiv \text{sampling cost}_n$\\
+        %where $EstErr_n(\theta)$ is the estimation error involving 
+        %$I \left[ {\tau(\theta) \not\in \text{FWCI};n} \right]$ plus the $c_n(\theta) \equiv \text{sampling cost}_n$\\
         \vspace{2mm}
     We combine (\ref{opt_n}) and (\ref{loss_fn}) to express:
         \begin{equation} \label{p_n_theta}
@@ -170,10 +169,12 @@ methodologies in order to address the FWCI problem.
 \begin{frame}{Construction of Loss and Risk Functions-Contd}
 \vspace{5mm}
 Having fixed pre-assigned $d,\alpha,\rho$ and $\sigma$, we incorporate the 
-following expression of the cost function:
+following cost function:
         \begin{equation} \label{cost_fn}
         c_n(\theta) = 2(d^\rho \sigma)^{-1} \phi(z_{\alpha/2})n^{1/2}.
         \end{equation}
+        
+         \vspace{0.2cm}
 Then, in the spirits of (\ref{opt_n}) and (\ref{p_n_theta})-(\ref{cost_fn}), we construct the loss function (for fixed $0<\rho \le 1$) as:
         \begin{equation} \label{loss2}
             \textbf{Loss: }L_n(\mu,J_n) \equiv d^{-\rho-1}I[\mu \not\in J_n;n]+c_n(\theta).
@@ -193,12 +194,13 @@ The corresponding Risk is given by:
         &= 2d^{-\rho-1}[1-\Phi(n^{1/2}d/\sigma)]+2(d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})n^{1/2} 
     \end{split}
     \end{equation}
+    \vspace{0.2cm}
 Differentiating the expression from (\ref{risk_fn}), 
 which is convex in $n$, with respect to $n$ and equate it to zero to claim:\\
-    $-d^{-\rho-1}(d/\sigma)n^{-1/2}\phi(n^{1/2}d/\sigma)+
-    2(d^\rho \sigma)^{-1}\phi(z_{\alpha/2})\frac{1}{2} n^{1/2}=0$\\
+   % $-d^{-\rho-1}(d/\sigma)n^{-1/2}\phi(n^{1/2}d/\sigma)+
+    %2(d^\rho \sigma)^{-1}\phi(z_{\alpha/2})\frac{1}{2} n^{1/2}=0$\\
     \vspace{0.1cm}
-    $\Rightarrow \phi(n^{1/2}d/\sigma)=\phi(z_{\alpha/2}) \Rightarrow  n \equiv n^*=z^2_{\alpha/2}\sigma^2d^{-2}$
+    $ \phi(n^{1/2}d/\sigma)=\phi(z_{\alpha/2}) \Rightarrow  n \equiv n^*=z^2_{\alpha/2}\sigma^2d^{-2}$
     
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,7 +344,7 @@ We fix a suitable number $\kappa(\in (0,1))$ and begin with pilot observations $
   \vspace{5mm}
     The table below summarizes some properties of the sampling strategies.
 \begin{center}
-\begin{tabular}{c c c} 
+\begin{tabular}{l c c} 
  \hline
  Sampling Strategy & $a_1$ & $a_2$ \\
  \hline
@@ -385,7 +387,7 @@ The table below summarises the performance of the sampling strategies (fixing $\
 
   \vspace{5mm}
     \begin{center}
-\begin{tabular}{c c c c c} 
+\begin{tabular}{l c c c c} 
  \hline
  Sampling Strategy & $d$ & $n$ & $\hat{\mu}_n$ & $J_n$  \\  
  \hline
@@ -408,7 +410,7 @@ The table below summarises the performance of the sampling strategies (fixing $\
 \begin{frame}{\textit{Airquality} Data Analysis-Contd}
   \vspace{5mm}
     \begin{center}
-\begin{tabular}{c c c c c} 
+\begin{tabular}{l c c c c} 
  \hline
  Sampling Strategy & $d$ & $n$ & $\hat{\mu}_n$ & $J_n$  \\  
   \hline
