@@ -135,7 +135,7 @@ with desired asymptotic second-order characteristics under one unified theory.
 \item $n^*$ from (\ref{opt_n}) is termed as the \textit{optimal fixed sample size} required to 
 construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known.
 \item The magnitude of $n^*$ remains unknown because $\sigma^2$ is 
-assumed unknown.Dantzig\cite{dantzig1940} showed that there 
+assumed unknown. Dantzig\cite{dantzig1940} showed that there 
 did not exist any fixed-sample-size methodology to solve this problem.
 \item Stein\cite{stein1949} followed by Anscombe\cite{anscombe1953}, Ray\cite{ray1957},Chow\cite{chow1965}, and
 others, developed a number of pioneering multistage and purely sequential sampling
@@ -242,7 +242,7 @@ Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,
     \begin{itemize}
         \item[\textbf{A1}] $ E_{\theta}(N)=n^* +a_1 +o(1)$ [\textit{asymptotic second-order efficiency}];
          \item[\textbf{A2}] $H \equiv \frac{N-n^*}{n^{*1/2}} \xrightarrow{\L} N(0,a_2), a_2>0$ ;
-          \item[\textbf{A3}] $P_{\theta}\{ N \le \epsilon^*\}=O(n^{*-a_3}),\epsilon \in (0,1), a_3>0$;
+          \item[\textbf{A3}] $P_{\theta}\{ N \le \epsilon n^*\}=O(n^{*-a_3}),\epsilon \in (0,1), a_3>0$;
            \item[\textbf{A4}] $|H|^{a_4} \text{ is uniformly integrable },a_4 >0$.
     \end{itemize}
     
@@ -274,7 +274,7 @@ when $a_3>\frac{5}{2}$ and $a_4=2$ as $d \xrightarrow{} 0$ :
 \begin{enumerate}
 \item[(i)] $E_{\theta}[(n^{*-1}N)^{1/2}]=1+a_5n^{*-1}+o(n^{*-1})$ where $a_5=\frac{1}{2}(a_1-\frac{1}{2}a_2)$;
 \item[(ii)] $P_{\theta} \{ \mu \in J_N\} = (1-\alpha)+2a_6n^{*-1}+o(n^{*-1)}$\\
-where $a_6=\frac{1}{2}\{ a_1-(a_2/4)(1-z^2_{\alpha/2}) \}z_{\alpha/2}\phi(z_{\alpha/2})$;
+where $a_6=\frac{1}{2}\{ a_1-(a_2/4)(1+z^2_{\alpha/2}) \}z_{\alpha/2}\phi(z_{\alpha/2})$;
 \item[(iii)] $\text{RiskEff}_d =\omega=\frac{R_N(\mu,J_N)}{R_{n^*}(\mu,J_{n^*})}= 1+ a_7 n^{*-1}+o(n^{*-1)}$ \\ 
 where $a_7 = 2\{\alpha + 2z_{\alpha/2}\phi(z_{\alpha/2})\}^{-1} \{z_{\alpha/2}\phi(z_{\alpha/2})a_5-a_6\}$.
 \end{enumerate}
