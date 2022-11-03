@@ -74,7 +74,7 @@ Interval (MRFWCI) for a Normal Mean}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
 \begin{frame}{Motivation}
-
+  \vspace{5mm}
 \begin{itemize}
 \item Under\textbf{ fixed-width confidence interval (FWCI)} methodology, one treats the associated confidence coefficient as the main focus.
 \item  In such a formulation, one does not encounter the cost of unit observation at all.
@@ -92,7 +92,7 @@ with desired asymptotic second-order characteristics under one unified theory.
 
 \section{Loss and Risk Function}
 \begin{frame}{FWCI Setup}
-
+  \vspace{5mm}
 \begin{itemize}
 \item $X_1,X_2, \dots ,X_n \dots$ are \textit{independent 
     and identically distributed (i.i.d)} observations from a common 
@@ -105,15 +105,15 @@ with desired asymptotic second-order characteristics under one unified theory.
     $$\text{Sample variance: }S_n^2=(n-1)^{-1}\sum_
     {i=1}^n {(X_i-\bar{X}_n)^2}$$
     \vspace{0.1cm}
-    We also denote \\
-    $\phi(x)=(2\pi)^{-1/2}exp(-x^2/2)$ and $\Phi(x) = \int_{-\infty}^{x} \phi(y) dy $
+    %We also denote \\
+    %$\phi(x)=(2\pi)^{-1/2}exp(-x^2/2)$ and $\Phi(x) = \int_{-\infty}^{x} \phi(y) dy $
     
     \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
     
  \begin{frame}{FWCI Setup-Contd}
-    \vspace{7mm}
+  \vspace{5mm}
 
     
     Having pre-assigned numbers, $d(>0)$ and $0<\alpha<1$, the FWCI for $\mu$ is:
@@ -132,7 +132,7 @@ with desired asymptotic second-order characteristics under one unified theory.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
  \begin{frame}{FWCI Setup-Contd}
-  \vspace{7mm}
+  \vspace{5mm}
 
 \begin{itemize}
 \item $n^*$ from (\ref{opt_n}) is termed as the \textit{optimal fixed sample size} required to 
@@ -150,7 +150,7 @@ methodologies in order to address the FWCI problem.
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Construction of Loss and Risk Functions}
-    \vspace{7mm}
+    \vspace{5mm}
     Generically, we may initiate the following idea of a loss function in practice:
         \begin{equation} \label{loss_fn}
             L_n(\theta)  = EstErr_n(\theta)+c_n(\theta),
@@ -168,7 +168,7 @@ methodologies in order to address the FWCI problem.
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Construction of Loss and Risk Functions-Contd}
-\vspace{10mm}
+\vspace{5mm}
 Having fixed pre-assigned $d,\alpha,\rho$ and $\sigma$, we incorporate the 
 following expression of the cost function:
         \begin{equation} \label{cost_fn}
@@ -183,7 +183,7 @@ Then, in the spirits of (\ref{opt_n}) and (\ref{p_n_theta})-(\ref{cost_fn}), we 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Construction of Loss and Risk Functions-Contd}
-\vspace{10mm}
+  \vspace{5mm}
 
 The corresponding Risk is given by:
     \begin{equation} \label{risk_fn}
@@ -237,8 +237,8 @@ Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Properties}
-\begin{frame}{}
-\vspace{15mm}
+\begin{frame}{Properties}
+  \vspace{5mm}
  Without specifying a formal sampling strategy , we assume a number of key associated properties as $d \xrightarrow{} 0$ :
    
     \begin{itemize}
@@ -254,7 +254,7 @@ Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Asymptotic first-order properties}
-\vspace{7mm}
+  \vspace{5mm}
 For the general MRFWCI estimation methodology carried out under the loss function (\ref{loss2}), for every fixed $\alpha, \rho \text{ and }
  \theta$, with $a_i$ defined via assumption $A_i$, we have the following asymptotic first-order conclusions as $d \xrightarrow{} 0$ :
 
@@ -288,6 +288,7 @@ where $a_7 = 2\{\alpha + 2z_{\alpha/2}\phi(z_{\alpha/2})\}^{-1} \{z_{\alpha/2}\p
 \section{Sampling Strategies}
 %\section{Sampling Strategies}
 \begin{frame}{Illustrations of Multistage Sampling Strategies}
+  \vspace{5mm}
     \begin{itemize}
     \item \textbf{Purely Sequential Sampling strategy}
 \\ We begin with pilot observations $X_1,\dots ,X_m; m\ge 2$. Then, we record one additional observation 
@@ -295,8 +296,13 @@ at-a-time according to the following stopping time:
 \begin{equation*}
     N \equiv N_d=inf\{ n \ge m; n \ge z^2_{\alpha/2}S_n^2/d^2 \}  \textrm{ and }  J_N=[\bar{X}_N \pm d].
 \end{equation*}
-
-\item \textbf{Accelerated Sequential Sampling strategy}\\
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Illustrations of Multistage Sampling Strategies-Contd}
+  \vspace{5mm}
+    \begin{itemize}
+ \item \textbf{Accelerated Sequential Sampling strategy}\\
 We fix an integer $k(\geq 2)$ and begin with pilot observations $X_1,\dots ,X_m; m\ge 2$. Then, we record 
 one additional observation at-a-time according to the following stopping time:        
         $$ T \equiv T_d=inf\{ n \ge m; n \ge k^{-1}z^2_{\alpha/2}S_n^2/d^2 \} $$ 
@@ -304,14 +310,20 @@ one additional observation at-a-time according to the following stopping time:
     \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}{Illustrations of Multistage Sampling Strategies-Contd}
+  \vspace{5mm}
     \begin{itemize}
  
 \item \textbf{Three Stage Sampling strategy}\\
 We fix a suitable number $\kappa(\in (0,1))$ and begin with pilot observations $X_1,\dots ,X_m; m\ge 2$ and define:
         $$ T =max\{  m,  <\kappa z^2_{\alpha/2}S_m^2/d^2 >+1\} $$ 
         $$ N =max \{ T,  <z^2_{\alpha/2}S_T^2/d^2 >+1\}  \text{ and } J_N=[\bar{X}_N \pm d] $$
- 
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Illustrations of Multistage Sampling Strategies-Contd}
+  \vspace{5mm}
+    \begin{itemize}
 
 \item \textbf{Two-stage Sampling strategy}
     \\ We assume that there exists known $\sigma_L(>0)$ such that $\sigma>\sigma_L$.The pilot sample size is defined as:
@@ -325,8 +337,9 @@ We fix a suitable number $\kappa(\in (0,1))$ and begin with pilot observations $
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{}
-    \vspace{20mm}
+
+\begin{frame}{Illustrations of Multistage Sampling Strategies-Contd}
+  \vspace{5mm}
     The table below summarizes some properties of the sampling strategies.
 \begin{center}
 \begin{tabular}{c c c} 
@@ -345,21 +358,32 @@ Three-stage & $0.5-2\kappa^{-1}$ & $2\kappa^{-1}$  \\
 \section{Data Analysis and Simulations}
 %\section{Data Analysis and Simulations}
 \begin{frame}{\textit{Airquality} Data Analysis}
+  \vspace{5mm}
+\begin{itemize}
+\item We will illustrate applications of the MRFWCI problem for the average in the context of \textit{airquality dataset} 
+describing daily air quality measurements in New York.
+\item The variable of interest $(X)$ was \textit{wind speed},which
+was normally distributed.
+\item The mean and standard deviation from the full dataset were: $\mu = 9.957$ and $\sigma = 3.523$. 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Now we will illustrate applications of the MRFWCI problem for the average in the context of \textit{airquality dataset} 
-describing daily air quality measurements in New York. The variable of interest $(X)$ was \textit{wind speed},which
-was normally distributed. The mean and standard deviation from the full dataset were: $\mu = 9.957$ and $\sigma = 3.523$. 
+\begin{frame}{\textit{Airquality} Data Analysis-Contd}
+  \vspace{5mm}
+
 The table below summarises the performance of the sampling strategies (fixing $\alpha=0.05$ and $\rho=1.0$). The notations are defined below:
 \begin{itemize}
 \item $n$: terminal sample size;
 \item $\hat{\mu}_n=n^{-1}\sum_{j=1}^n{x_j}$; terminal sample mean;
 \item $J_n=[\hat{\mu}_n \pm d]$; terminal $95\%$ MRFWCI for $\mu$.
 \end{itemize}
-    
-\end{frame}
 
-\begin{frame}{}
-    \vspace{8mm}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\textit{Airquality} Data Analysis-Contd}
+
+  \vspace{5mm}
     \begin{center}
 \begin{tabular}{c c c c c} 
  \hline
@@ -381,8 +405,8 @@ The table below summarises the performance of the sampling strategies (fixing $\
 \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-    \vspace{8mm}
+\begin{frame}{\textit{Airquality} Data Analysis-Contd}
+  \vspace{5mm}
     \begin{center}
 \begin{tabular}{c c c c c} 
  \hline
@@ -399,9 +423,9 @@ The table below summarises the performance of the sampling strategies (fixing $\
 \end{tabular}
 \end{center}
 \end{frame}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Simulation Study}
-
+  \vspace{5mm}
 Simulated performances of  MRFWCI strategies under $10,000$ replications for a 
 $N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
  \begin{center}
@@ -426,8 +450,11 @@ $N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
     
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-    \vspace{10mm}
+\begin{frame}{Simulation Study-Contd}
+\vspace{7mm}
+%Simulated performances of  MRFWCI strategies under $10,000$ replications for a 
+%$N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
+
  \begin{center}
 \begin{tabular}{c c c c c} 
  \hline
@@ -457,7 +484,7 @@ $N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 \begin{frame}{Conclusion}
-\vspace{10mm}
+\vspace{5mm}
 When handling FWCI problems, the lack of a loss function creates a false impression that perhaps 
 \begin{itemize}
 \item observations may not cost at all and/or 
