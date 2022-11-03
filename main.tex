@@ -133,14 +133,14 @@ with desired asymptotic second-order characteristics under one unified theory.
  \begin{frame}{}
   \vspace{7mm}
 
-The expression of $n^*$ from (1) is referred to as the \textit{optimal fixed sample size} required to 
+The expression of $n^*$ from (\ref{opt_n}) is referred to as the \textit{optimal fixed sample size} required to 
 construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
 \vspace{0.2cm}
 We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is 
 assumed unknown.Dantzig\cite{dantzig1940} showed that there 
 did not exist any fixed-sample-size methodology to solve this problem.\\
 \vspace{0.2cm}
-Stein\cite{stein1949} followed by Anscombe\cite{anscombe1953}, Ray\cite{ray1957},Chow \cite{chow1965}, and
+Stein\cite{stein1949} followed by Anscombe\cite{anscombe1953}, Ray\cite{ray1957},Chow\cite{chow1965}, and
 others, developed a number of pioneering multistage and purely sequential sampling
 methodologies in order to address the FWCI problem.
 
@@ -155,8 +155,8 @@ methodologies in order to address the FWCI problem.
         where $EstErr_n(\theta)$ is the estimation error involving 
         $I \left[ {\tau(\theta) \not\in \text{FWCI};n} \right]$ plus the $c_n(\theta) \equiv \text{sampling cost}_n$\\
         \vspace{2mm}
-    We combine (1) and (2) to express:
-        \begin{equation}
+    We combine (\ref{opt_n}) and (\ref{loss_fn}) to express:
+        \begin{equation} \label{p_n_theta}
         p_n(\theta ;J_n) \equiv E_{\theta} \{ {I[ \mu \not\in J_n;n]}\} =2\{ 1-\Phi(n^{1/2}d/\sigma) \}.
         \end{equation}
         which converges to $0$ as $n \rightarrow \infty$.\\
@@ -171,8 +171,8 @@ following expression of the cost function:
         \begin{equation} \label{cost_fn}
         c_n(\theta) = 2(d^\rho \sigma)^{-1} \phi(z_{\alpha/2})n^{1/2}.
         \end{equation}
-Then, in the spirits of (1) and (3)-(4), we construct the loss function (for fixed $0<\rho \le 1$) as:
-        \begin{equation}
+Then, in the spirits of (\ref{opt_n}) and (\ref{p_n_theta})-(\ref{cost_fn}), we construct the loss function (for fixed $0<\rho \le 1$) as:
+        \begin{equation} \label{loss2}
             \textbf{Loss: }L_n(\mu,J_n) \equiv d^{-\rho-1}I[\mu \not\in J_n;n]+c_n(\theta).
         \end{equation}
 
@@ -183,7 +183,7 @@ Then, in the spirits of (1) and (3)-(4), we construct the loss function (for fix
 \vspace{10mm}
 
 The corresponding Risk is given by:
-    \begin{equation}
+    \begin{equation} \label{risk_fn}
     \begin{split}
         \textbf{Risk: } R_n(\mu,J_n)  
         & \equiv E_{\theta}[L_n(\mu,J_n)] \\ 
@@ -191,7 +191,7 @@ The corresponding Risk is given by:
     \end{split}
     \end{equation}
 We may pretend to treat $n$ as a continuous variable 
-and differentiate the expression from (6), 
+and differentiate the expression from (\ref{risk_fn}), 
 which is convex in $n$, with respect to $n$ and equate it to zero to claim:\\
     $-d^{-\rho-1}(d/\sigma)n^{-1/2}\phi(n^{1/2}d/\sigma)+
     2(d^\rho \sigma)^{-1}\phi(z_{\alpha/2})\frac{1}{2} n^{1/2}=0$\\
@@ -221,7 +221,7 @@ Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,
     \textbf{MRFWCI: }J_N=[\bar{X}_N \pm d] \text{ where }\bar{X}_N=N^{-1} \sum_{i=1}^N{X_i}.    
     \end{equation*}
     
-    The risk function $R_N(\mu,J_N)$ with the terminal strategy $(N,J_N)$ for $\mu$ under (5) is:
+    The risk function $R_N(\mu,J_N)$ with the terminal strategy $(N,J_N)$ for $\mu$ under (\ref{loss2}) is:
     \begin{equation*}
         R_N(\mu,J_N) = 2\{ d^{-\rho-1} E_{\theta}[1-\Phi(N^{1/2}d/\sigma)]+ (d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})E_{\theta}(N^{1/2})\}.
     \end{equation*}
@@ -253,7 +253,7 @@ Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Asymptotic first-order properties}
 \vspace{7mm}
-For the general MRFWCI estimation methodology carried out under the loss function (5), for every fixed $\alpha, \rho \text{ and }
+For the general MRFWCI estimation methodology carried out under the loss function (\ref{loss2}), for every fixed $\alpha, \rho \text{ and }
  \theta$, with $a_i$ defined via assumption $A_i$, we have the following asymptotic first-order conclusions as $d \xrightarrow{} 0$ :
 
 \begin{itemize}
@@ -267,7 +267,7 @@ For the general MRFWCI estimation methodology carried out under the loss functio
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Asymptotic second-order properties}
 \vspace{5mm}
-For the general MRFWCI estimation methodology carried out under (5), for every 
+For the general MRFWCI estimation methodology carried out under (\ref{loss2}), for every 
 fixed $\alpha, \rho \text{ and } \theta$, with $a_i$ defined 
 via assumption $A_i$, we have the following asymptotic second-order conclusions 
 when $a_3>\frac{5}{2}$ and $a_4=2$ as $d \xrightarrow{} 0$ :
@@ -455,7 +455,10 @@ $N(25,16)$ population with $\alpha=0.05$ and $\rho=1.0$ in (5).
 \begin{frame}{Conclusion}
 \vspace{10mm}
 When handling FWCI problems,the lack of a loss function creates a false impression that perhaps 
-(i) observations may not cost at all and/or (ii) one's available budget may be unlimited. 
+\begin{itemize}
+\item observations may not cost at all and/or 
+\item one's available budget may be unlimited. 
+\end{itemize}
 In the MRFWCI formulation, an FWCI problem has been casted in the light of an MRPE by 
 balancing the estimation error with the cost of sampling.
 \end{frame}
@@ -472,7 +475,6 @@ balancing the estimation error with the cost of sampling.
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{References}
-
 
 \end{frame}
 
