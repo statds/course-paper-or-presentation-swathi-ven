@@ -75,15 +75,13 @@ Interval (MRFWCI) for a Normal Mean}
 \section{Motivation}
 \begin{frame}{Motivation}
 
-Under a classical fixed-width confidence interval (FWCI) methodology, one treats the associated confidence coefficient as the main focus, 
-which is naturally supposed to go up as the sample size increases. 
-In such a formulation, however, one does not encounter the cost of unit observation at all,
-which often creates a false pretense that perhaps (i) observations may not cost at all
-and/or (ii) one’s available budget may be unlimited.\\
-\vspace{0.2cm}
-On the other hand, under the minimum risk point estimation (MRPE) strategy, one openly balances the estimation
-error by taking into account the cost of sampling, which go together hand in hand.\\
-\vspace{0.2cm}
+\begin{itemize}
+\item Under\textbf{ fixed-width confidence interval (FWCI)} methodology, one treats the associated confidence coefficient as the main focus.
+\item  In such a formulation, one does not encounter the cost of unit observation at all.
+\item  Under the \textbf{minimum risk point estimation (MRPE)} strategy, one openly balances the estimation
+error by taking into account the cost of sampling,
+\end{itemize}
+
 Here, we propose to formulate a new way to combine both MRPE and FWCI methodologies
 with desired asymptotic second-order characteristics under one unified theory.
 
@@ -124,8 +122,8 @@ with desired asymptotic second-order characteristics under one unified theory.
         & \text{ when } n \text{ is the smallest integer } \ge z^2_{\alpha/2}\sigma^2 d^{-2} \equiv n^*.
         \end{split}
         \end{equation}
-        $z_{\alpha/2}$ stands for the upper $50 \alpha \%$ point of a standard normal r
-        andom variable; that is, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
+        $z_{\alpha/2}$ stands for the upper $50 \alpha \%$ point of a standard normal 
+        random variable; that is, $\Phi(z_{\alpha/2})=1-\frac{\alpha}{2}$
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,16 +131,18 @@ with desired asymptotic second-order characteristics under one unified theory.
  \begin{frame}{}
   \vspace{7mm}
 
-The expression of $n^*$ from (\ref{opt_n}) is referred to as the \textit{optimal fixed sample size} required to 
-construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
-\vspace{0.2cm}
-We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is 
+\begin{itemize}
+\item $n^*$ from (\ref{opt_n}) is termed as the \textit{optimal fixed sample size} required to 
+construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known.
+\item The magnitude of $n^*$ remains unknown because $\sigma^2$ is 
 assumed unknown.Dantzig\cite{dantzig1940} showed that there 
-did not exist any fixed-sample-size methodology to solve this problem.\\
-\vspace{0.2cm}
-Stein\cite{stein1949} followed by Anscombe\cite{anscombe1953}, Ray\cite{ray1957},Chow\cite{chow1965}, and
+did not exist any fixed-sample-size methodology to solve this problem.
+\item Stein\cite{stein1949} followed by Anscombe\cite{anscombe1953}, Ray\cite{ray1957},Chow\cite{chow1965}, and
 others, developed a number of pioneering multistage and purely sequential sampling
 methodologies in order to address the FWCI problem.
+\end{itemize}
+
+
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
