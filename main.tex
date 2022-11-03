@@ -167,7 +167,7 @@ methodologies in order to address the FWCI problem.
                 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{Construction of Loss and Risk Functions-Contd}
 \vspace{10mm}
 Having fixed pre-assigned $d,\alpha,\rho$ and $\sigma$, we incorporate the 
 following expression of the cost function:
@@ -182,7 +182,7 @@ Then, in the spirits of (\ref{opt_n}) and (\ref{p_n_theta})-(\ref{cost_fn}), we 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
+\begin{frame}{Construction of Loss and Risk Functions-Contd}
 \vspace{10mm}
 
 The corresponding Risk is given by:
@@ -193,8 +193,7 @@ The corresponding Risk is given by:
         &= 2d^{-\rho-1}[1-\Phi(n^{1/2}d/\sigma)]+2(d^{\rho}\sigma)^{-1}\phi(z_{\alpha/2})n^{1/2} 
     \end{split}
     \end{equation}
-We may pretend to treat $n$ as a continuous variable 
-and differentiate the expression from (\ref{risk_fn}), 
+Differentiating the expression from (\ref{risk_fn}), 
 which is convex in $n$, with respect to $n$ and equate it to zero to claim:\\
     $-d^{-\rho-1}(d/\sigma)n^{-1/2}\phi(n^{1/2}d/\sigma)+
     2(d^\rho \sigma)^{-1}\phi(z_{\alpha/2})\frac{1}{2} n^{1/2}=0$\\
@@ -206,19 +205,19 @@ which is convex in $n$, with respect to $n$ and equate it to zero to claim:\\
 \section{General Theory-MRFWCI}
 \begin{frame}{General setup of MRFWCI-Normal mean Estimation}
 \vspace{5mm}
-Let $m(\geq 2)$ be an initial or pilot sample size, not involving $d$. In the case of 
-each estimation strategy that will be discussed later ,  we will readily see that the boundary 
-conditions for stopping will depend only upon the sample variance(s), that is the event $[N=n]$ 
-would only depend on $(S_m^2,\dots,S_n^2)$ for all $n \geq m$, ultimately arriving at the terminally accrued data, 
-$\{N,X_1,\dots,X_N\}$ where $N$ would estimate $n^*$. \\
-\vspace{0.4cm}
-By using Basu's theorem, $I(N=n)$ will be independent of $\bar{X}_n$ for all $n \geq m$. \\
-\vspace{0.1cm}
+\begin{itemize}
+\item Let $m(\geq 2)$ be an initial or pilot sample size, not involving $d$.
+\item In every estimation strategy, the boundary 
+conditions for stopping will depend only upon the sample variance(s).
+\item The event $[N=n]$  would only depend on $(S_m^2,\dots,S_n^2)$ for all $n \geq m$.
+\item By using Basu's theorem, $I(N=n)$ will be independent of $\bar{X}_n$ for all $n \geq m$.
+\end{itemize}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\vspace{10mm}
+\begin{frame}{General setup of MRFWCI-Normal mean Estimation-Contd}
+\vspace{5mm}
 Now, we propose the MRFWCI for $\mu$ based on the recorded observation $\{N,X_1,X_2,\dots ,X_N\}$ as:
     \begin{equation*}
     \textbf{MRFWCI: }J_N=[\bar{X}_N \pm d] \text{ where }\bar{X}_N=N^{-1} \sum_{i=1}^N{X_i}.    
