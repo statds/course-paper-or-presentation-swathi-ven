@@ -17,11 +17,14 @@
 \usepackage{amsmath}
 \usepackage[makeroom]{cancel}
 
+%Bib package
+\bibliographystyle{elsarticle-num}
 
 \usepackage{textpos}
 
 \usepackage{tikz}
 \usepackage{multirow}
+
 
 \usetheme{Dresden}
 \setbeamertemplate{footline}[]
@@ -134,10 +137,10 @@ The expression of $n^*$ from (1) is referred to as the \textit{optimal fixed sam
 construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known. \\
 \vspace{0.2cm}
 We emphasize that the magnitude of $n^*$ remains unknown because $\sigma^2$ is 
-assumed unknown.Dantzig (1940) showed that there 
+assumed unknown.Dantzig\cite{dantzig1940} showed that there 
 did not exist any fixed-sample-size methodology to solve this problem.\\
 \vspace{0.2cm}
-Stein (1945,1949), followed by Anscombe (1952, 1953), Ray (1957), Chow and Robbins (1965), and
+Stein\cite{stein1949} followed by Anscombe\cite{anscombe1953}, Ray\cite{ray1957},Chow \cite{chow1965}, and
 others, developed a number of pioneering multistage and purely sequential sampling
 methodologies in order to address the FWCI problem.
 
@@ -460,19 +463,17 @@ balancing the estimation error with the cost of sampling.
 %\section{Reference}
 
 %\nocite{*}
-\begin{frame}{Reference}
-%\bibliographystyle{unsrt}
-%\bibliography{bibfile.bib}
+\begin{frame}{References}
 
-\textbf{Nitis Mukhopadhyay and Swathi Venkatesan}.\\
-\vspace{0.2cm}
-A New Formulation of Minimum Risk Fixed-Width Confidence Interval
-(MRFWCI) Estimation Problems for a Normal Mean with Illustrations
-and Simulations: Applications to Airquality Data.\\
-\textit{Sequential Analysis, 41, 2022}.
+
+\bibliography{sample.bib}
+
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{References}
 
+
+\end{frame}
 
 \end{document}
