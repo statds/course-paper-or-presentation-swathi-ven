@@ -18,7 +18,8 @@
 \usepackage[makeroom]{cancel}
 
 %Bib style
-\bibliographystyle{acm}
+\bibliographystyle{apa}
+\usepackage{natbib}
 
 \usepackage{textpos}
 
@@ -155,7 +156,7 @@ construct the FWCI, $J_n$, for $\mu$ had $\sigma$ been known.
 \item The magnitude of $n^*$ remains unknown because $\sigma^2$ is 
 assumed unknown. Dantzig\cite{dantzig1940} showed that there 
 did not exist any fixed-sample-size methodology to solve this problem.
-\item Stein\cite{stein1945}\cite{stein1949} followed by Anscombe\cite{anscombe1952}\cite{anscombe1953}, Ray\cite{ray1957},Chow\cite{chow1965} and
+\item \cite{stein1945}, \cite{stein1949} followed by \cite{anscombe1952}, \cite{anscombe1953}, \cite{ray1957}, \cite{chow1965} and
 others, developed a number of pioneering multistage and purely sequential sampling
 methodologies in order to address the FWCI problem.
 \end{itemize}
@@ -333,8 +334,9 @@ one additional observation at-a-time according to the following stopping time:
  
 \item \textbf{Three Stage Sampling strategy}\\
 We fix a suitable number $\kappa(\in (0,1))$ and begin with pilot observations $X_1,\dots ,X_m; m\ge 2$ and define:
-        $$ T =max\{  m,  <\kappa z^2_{\alpha/2}S_m^2/d^2 >+1\} $$ 
-        $$ N =max \{ T,  <z^2_{\alpha/2}S_T^2/d^2 >+1\}  \text{ and } J_N=[\bar{X}_N \pm d] $$
+        $$ T =max\{  m,  \langle \kappa z^2_{\alpha/2}S_m^2/d^2 \rangle+1\} $$ 
+        $$ N =max \{ T,  \langle z^2_{\alpha/2}S_T^2/d^2 \rangle+1\}  \text{ and } J_N=[\bar{X}_N \pm d] $$
+        where $\langle u \rangle = $largest integer $< u$.
     \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -344,10 +346,10 @@ We fix a suitable number $\kappa(\in (0,1))$ and begin with pilot observations $
 
 \item \textbf{Two-stage Sampling strategy}
     \\ We assume that there exists known $\sigma_L(>0)$ such that $\sigma>\sigma_L$.The pilot sample size is defined as:
-    $$m\equiv m_d=max \{ m_0(\ge 2),<z^2_{\alpha/2}\sigma_L^2/d^2>+1\}.$$
+    $$m\equiv m_d=max \{ m_0(\ge 2), \langle z^2_{\alpha/2}\sigma_L^2/d^2 \rangle+1\}.$$
     We begin with pilot observations $X_1,\dots ,X_m, m \ge 2$ and find the final sample size as:
     \begin{equation*}
-    N \equiv N_d=max\{ m,< t^2_{m-1,\alpha/2}S_m^2/d^2>+1\} \text{ and } J_N=[\bar{X}_N \pm d].
+    N \equiv N_d=max\{ m,\langle t^2_{m-1,\alpha/2}S_m^2/d^2 \rangle+1\} \text{ and } J_N=[\bar{X}_N \pm d].
 \end{equation*}
 
     \end{itemize}
@@ -510,7 +512,7 @@ When handling FWCI problems, the lack of a loss function creates a false impress
 In the MRFWCI formulation, an FWCI problem has been casted in the light of an MRPE by 
 balancing the estimation error with the cost of sampling.\\
 \vspace{0.2cm}
-These results have been discussed in Mukhopadhyay and Venkatesan(\cite{mrfwci2022}).
+These results have been discussed in \cite{mrfwci2022}.
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Reference}
